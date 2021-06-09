@@ -1,6 +1,7 @@
 
 import React, {Component} from 'react'
 
+
 export default class LoginComponent extends Component {
     constructor(props){
         super(props)
@@ -8,7 +9,6 @@ export default class LoginComponent extends Component {
             username:' ',
             password:'',
             hasLoginFailed:false,
-            showSuccessMessage:false
         }
   //  this.handleUserNameChanged = this.handleUserNameChanged.bind(this);
 
@@ -28,10 +28,7 @@ export default class LoginComponent extends Component {
 
     loginClicked(){
         if(this.state.username==='lalit' && this.state.password==='1234'){
-                this.setState({
-                    showSuccessMessage: true
-                });
-
+               this.props.history.push(`/welcome/${this.state.username}`)
         }
         else{
             this.setState({
@@ -46,10 +43,8 @@ export default class LoginComponent extends Component {
             <div>
                 <h1>Login</h1>
                 <div className="container">
-                  {  /*<ShowInvalidCredentials hasLoginFailed={this.state.hasLoginFailed}/>*/}
-                   {/* <ShowSuccessMessage hasLoginSuceeded={this.state.showSuccessMessage}/>*/}
-                   {this.state.hasLoginFailed && <div>Login Failed:Invalid Credential!</div>}
-                   {this.state.showSuccessMessage && <div>Login Succesfull!</div>}
+                   {/*<ShowInvalidCredentials hasLoginFailed={this.state.hasLoginFailed}/>*/}
+                   { this.state.hasLoginFailed && <div>Login Failed:Invalid Credential!</div> }
                     User Name: <input type="text" name="username" value={this.state.username} onChange = {this.handleFormFieldChanged} />
                     Password: <input type="password" name="password" value={this.state.password} onChange={this.handleFormFieldChanged}/>
                     <button className="btn btn-success" onClick={this.loginClicked}>Login</button>
@@ -59,15 +54,9 @@ export default class LoginComponent extends Component {
     }
 }
 
-function ShowInvalidCredentials(props){
-    if(props.hasLoginFailed){
-       return  <div>Login Failed:Invalid Credential!</div>
-    }
-    return null;
-}
-function ShowSuccessMessage(props){
-    if(props.hasLoginSuceeded){
-        return <div>Login Succesfull!</div>
-    }
-    return null;
-}
+//function ShowInvalidCredentials(props){
+  //  if(props.hasLoginFailed){
+    //   return  <div>Login Failed:Invalid Credential!</div>
+   // }
+   // return null;
+//}
