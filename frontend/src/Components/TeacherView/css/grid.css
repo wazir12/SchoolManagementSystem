@@ -1,0 +1,24 @@
+.root{
+    flex: 1;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+  .paper{
+    padding: 8;
+    text-align: center;
+    color:black;
+  
+    
+  }
+  .subtext{
+    text-align: left;
+  }
+  .heading{
+    float: center;
+    text-align: center;
+    justify-content: center;
+    background-color:#060b26;;
+    color: azure;
+  }

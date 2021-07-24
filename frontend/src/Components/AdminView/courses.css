@@ -1,0 +1,6 @@
+.scroller {
+    margin: 10px;
+    overflow: scroll;
+    overflow-x: scroll; /* Hide horizontal scrollbar */
+    overflow-y: scroll; 
+  }
